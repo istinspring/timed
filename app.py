@@ -2,6 +2,7 @@
 import os
 import json
 import logging
+import operator
 
 from flask import Flask
 from flask import render_template
@@ -111,10 +112,12 @@ def test3():
     Please include a button that will recalculate and update the results when clicked.
     """
 
-    result = {}
+    result = []
     weather_data_file = os.path.join(BASE_DIR, 'data', 'weather.json')
     with open(weather_data_file, 'r') as f:
-        result = json.loads(f.read())
+        data = json.loads(f.read())
+        sorted_data = sorted(data.iteritems(), key=operator.itemgetter(1))[::-1]
+        result =  sorted_data[:5]
 
     return render_template('test3.html', result=result)
 
