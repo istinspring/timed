@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+
+{% block page_body %}
+  <h1>Test1</h1>
+  <hr/>
+  <h4>part 1</h4>
+  <ul>
+    {% for st in result_1 %}
+      <li>{{ st|safe }}</li>
+    {% endfor %}
+  </ul>
+  <h4>part 2</h4>
+  <ul>
+    {% for st in result_2 %}
+      <li>{{ st|safe }}</li>
+    {% endfor %}
+  </ul>
+  <h4>part 3</h4>
+  <ul>
+    {% for st in result_3 %}
+      <li>{{ st|safe }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+`

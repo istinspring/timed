@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+
+{% block page_body %}
+  <h1>Test2</h1>
+  <hr/>
+  <ul>
+    {% for st in result %}
+    <li>{{ st|safe }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+`

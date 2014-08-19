@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+
+{% block page_body %}
+  <h1>Test3</h1>
+  <hr/>
+  <ul>
+    {% for key, value in result.items() %}
+    <li>{{ key }} - {{ value }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+`
