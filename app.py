@@ -5,7 +5,8 @@ import logging
 import operator
 
 from flask import Flask
-from flask import render_template
+from flask import render_template, redirect
+from api import get_warther
 
 from settings import BASE_DIR, VOWELS, LOG_LEVEL
 
@@ -120,6 +121,12 @@ def test3():
         result =  sorted_data[:5]
 
     return render_template('test3.html', result=result)
+
+
+@app.route("/recalt-test-3/")
+def recalc_test_3():
+    get_warther()
+    return redirect("/test3/")
 
 
 if __name__ == "__main__":
